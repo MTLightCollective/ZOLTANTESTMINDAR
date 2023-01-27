@@ -27,13 +27,14 @@
                 //<audio id="music" src="assets/audio.mp3" preload="auto"></audio>
             </a-assets>
 
-            <a-marker
+            <a-marker-camera
                 id="animated-marker"
                 type="pattern"
                 preset="custom"
                 url="assets/marker.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
+                smooth="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
@@ -45,27 +46,7 @@
                     //sound="src: #music; autoplay:true"
                     class="clickable"
                 ></a-entity>
-            </a-marker>
-            <a-entity camera></a-entity>
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerB"
-            >
-                <a-entity
-                    id="bowser-model"
-                    scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    //sound="src: #music; autoplay:true"
-                    class="clickable"
-                ></a-entity>
-            </a-marker>
+            </a-marker-camera>
             <a-entity camera></a-entity>
         </a-scene>
     </body>

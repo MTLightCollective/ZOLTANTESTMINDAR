@@ -27,7 +27,7 @@
                 //<audio id="music" src="assets/audio.mp3" preload="auto"></audio>
             </a-assets>
 
-            <a-marker-camera
+            <a-marker
                 id="animated-marker"
                 type="pattern"
                 preset="custom"
@@ -39,15 +39,15 @@
                 id="markerA"
             >
                 <a-entity
-                    id="bowser-model"
+                    id="zoltan-afro"
                     scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     //sound="src: #music; autoplay:true"
                     class="clickable"
                 ></a-entity>
-            </a-marker-camera>
-            //<a-entity camera></a-entity>
+            </a-marker>
+            <a-entity id='userCamera' camera></a-entity>
         </a-scene>
     </body>
 </html>

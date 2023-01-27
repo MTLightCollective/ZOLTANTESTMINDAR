@@ -5,15 +5,15 @@ AFRAME.registerComponent('markers_start',{
 		var sceneEl = document.querySelector('a-scene');
 		
 		//list of the markers
-		for(var i=1; i<19; i++)
+		for(var i=1; i<3; i++)
 		{
-			var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
+			var url="assets/marker"+i+".patt";
 			markersURLArray.push(url);
 			markersNameArray.push('Marker_'+i);
 			//console.log(url);
 		}
 
-		for(var k=0; k<18; k++)
+		for(var k=0; k<2; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 			markerEl.setAttribute('type','pattern');
@@ -27,7 +27,7 @@ AFRAME.registerComponent('markers_start',{
 			var objectEl = document.createElement('a-entity');
 			
 			objectEl.setAttribute('id','object');
-			objectEl.setAttribute('obj-model', {obj: 'url(assets/models/object.obj)', mtl: 'url(assets/models/object.mtl)'});
+			objectEl.setAttribute('obj-model', {obj: 'url(assets/object.obj)', mtl: 'url(assets/object.mtl)'});
 			objectEl.object3D.position.set(0, 0, 0);
 			objectEl.object3D.rotation.set(0, 0, 0);
 

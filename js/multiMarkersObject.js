@@ -28,7 +28,7 @@ AFRAME.registerComponent('markers_start',{
 			
 			objectEl.setAttribute('id','animated-asset');
 			objectEl.setAttribute('gltf-model','#animated-asset);
-			objectEl.setAttribute('scale','0.0872499646341073 0.0872499646341073 0.0872499646341073')
+			objectEl.setAttribute('scale','0.0872499646341073 0.0872499646341073 0.0872499646341073');
 			objectE1.setAttribute('animation-mixer', 'loop: repeat');
 			objectEl.object3D.position.set(0, 0, 0);
 			objectEl.object3D.rotation.set(0, 0, 0);

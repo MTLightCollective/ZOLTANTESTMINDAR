@@ -26,8 +26,8 @@ AFRAME.registerComponent('markers_start',{
 			//Adding 3D object to each marker
 			var objectEl = document.createElement('a-entity');
 			
-			objectEl.setAttribute('id','object');
-			objectEl.setAttribute('obj-model', {obj: 'url(assets/object.obj)', mtl: 'url(assets/object.mtl)'});
+			objectEl.setAttribute('id','animated-asset');
+			objectEl.setAttribute('gltf-model','url(assets/asset.gltf)');
 			objectEl.object3D.position.set(0, 0, 0);
 			objectEl.object3D.rotation.set(0, 0, 0);
 

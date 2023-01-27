@@ -7,47 +7,15 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         
-        //<script src="js/multiMarkersName.js"></script>
+        <script src="js/multiMarkersName.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.gltf"
-                ></a-asset-item>
-                <audio id="music" src="assets/audio.mp3" preload="auto"></audio>
-            </a-assets>
-
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                smooth="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-entity
-                    id="zoltan-afro"
-                    scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    sound="src: #music; autoplay:true"
-                    class="clickable"
-                ></a-entity>
-            </a-marker>
-            <a-entity id='userCamera' camera></a-entity>
+     <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true"
+  embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+    	<a-entity id='userCamera' camera>
+		<a-cursor> </a-cursor>
+    	</a-entity>
         </a-scene>
     </body>
 </html>

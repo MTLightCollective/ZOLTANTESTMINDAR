@@ -20,8 +20,8 @@
         >
             <a-assets>
                 <a-asset-item
-                    id="robobo"
-                    src="assets/robobo.gltf"
+                    id="afro"
+                    src="assets/asset.gltf"
                 ></a-asset-item>
                 <audio id="music" src="assets/audio.mp3" preload="auto"
                 ></audio>
@@ -35,19 +35,54 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
             >
                 <a-entity
-                    id="Robobo-model"
+                    id="afro-model"
                     scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
                     animation-mixer="loop: repeat"
-                    gltf-model="#robobo"
+                    gltf-model="#afro"
                     sound="src: #music; autoplay:true"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
             </a-marker>
-
+            <a-marker
+                id="smileymarker"
+                type="pattern"
+                preset="custom"
+                url="assets/smileymarker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="afro-model"
+                    scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#afro"
+                    sound="src: #music; autoplay:true"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+             <a-marker
+                id="devilmarker"
+                type="pattern"
+                preset="custom"
+                url="assets/devilmarker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity
+                    id="afro-model"
+                    scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#afro"
+                    sound="src: #music; autoplay:true"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
     </body>

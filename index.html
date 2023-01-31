@@ -23,38 +23,56 @@
                     id="afro"
                     src="assets/asset.gltf"
                 ></a-asset-item>
+                <audio id="music" src="assets/audio.mp3" preload="auto"
+                ></audio>
             </a-assets>
 
-            <a-marker-camera
+            <a-marker
                 id="robomarker"
                 type="pattern"
                 preset="custom"
                 url="assets/robomarker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
             >
                 <a-entity
-                    gltf-model="#afro"
+                    id="afro-model"
                     scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
                     animation-mixer="loop: repeat"
+                    gltf-model="#afro"
+                    sound="src: #music; autoplay:true"
+                    class="clickable"
+                    gesture-handler
                 ></a-entity>
-            </a-marker-camera>
+            </a-marker>
             <a-marker
                 id="smileymarker"
                 type="pattern"
                 preset="custom"
                 url="assets/smileymarker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
             >
-            <a-box position='0 0.5 0' material='color: yellow;'>
-             </a-box>
+<a-box position='0 0.5 0' material='color: yellow;'></a-box>
              <a-marker
                 id="devilmarker"
                 type="pattern"
                 preset="custom"
                 url="assets/devilmarker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
             >
                 <a-entity
-                    gltf-model="#afro"
+                    id="afro-model"
                     scale="0.0872499646341073 0.0872499646341073 0.0872499646341073"
                     animation-mixer="loop: repeat"
+                    gltf-model="#afro"
+                    sound="src: #music; autoplay:true"
+                    class="clickable"
+                    gesture-handler
                 ></a-entity>
             </a-marker>
             <a-entity camera></a-entity>

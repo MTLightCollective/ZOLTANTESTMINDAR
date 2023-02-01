@@ -7,6 +7,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script src="js/exit-button.js"></script>
+        <a href="./">Reload</a>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -14,7 +15,7 @@
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
             renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
             id="scene"
             embedded
             gesture-detector
@@ -97,6 +98,5 @@
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
-        <a href="./">Reload</a>
     </body>
 </html>

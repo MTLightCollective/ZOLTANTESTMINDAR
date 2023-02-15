@@ -1,104 +1,26 @@
 <!doctype html>
 <html>
-    <head>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-        <script src="js/exit-button.js"></script>
-    </head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="./cranescale1.mind" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+	<img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/examples/image-tracking/assets/card-example/card.png" />
+	<a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
+      </a-assets>
 
-    <body style="margin: 0; overflow: hidden;">
-      <header>
-        <button type="submit" style="color:red" onClick="refreshPage()">X</button>
-      </header>
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
-            <a-assets>
-                <a-asset-item
-                    id="afro"
-                    src="assets/asset.gltf"
-                ></a-asset-item>
-                                <a-asset-item
-                    id="afro2"
-                    src="assets/asset2.gltf"
-                ></a-asset-item>
-                                <a-asset-item
-                    id="afro3"
-                    src="assets/asset.gltf"
-                ></a-asset-item>
-                <audio id="music" src="assets/audio.mp3" preload="auto"
-                ></audio>
-            </a-assets>
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-            <a-marker
-                id="smileymarker"
-                type="pattern"
-                preset="custom"
-                url="assets/smileymarker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                smooth="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
-                <a-entity
-                    id="afro-model1"
-                    scale="0.08 0.08 0.08"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#afro"
-                    sound="src: #music; autoplay:true"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
-            <a-marker
-                id="devilmarker"
-                type="pattern"
-                preset="custom"
-                url="assets/devilmarker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                smooth="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
-                <a-entity
-                    id="afro-model2"
-                    scale="5 5 5"
-                    gltf-model="#afro2"
-                    sound="src: #music; autoplay:true"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
-             <a-marker
-                id="robomarker"
-                type="pattern"
-                preset="custom"
-                url="assets/robomarker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                smooth="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
-                <a-entity
-                    id="afro-model3"
-                    scale="0.08 0.08 0.08"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#afro3"
-                    sound="src: #music; autoplay:true"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
+          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+                      >
+      </a-entity>
+    </a-scene>
+  </body>
 </html>

@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
   <head>
-    	<meta name="viewport" content="width=device-width, initial scale=1"/>
-	<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/dist/mindar-image.prod.js"></script>
+    <meta name="viewport" content="width=device-width, initial scale=1"/>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-aframe.prod.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	      <style>
+    <style>
       #exit-button {
         position: absolute;
         top: 20px;
@@ -25,19 +25,20 @@
     </style>
   </head>
   <body>
-
-	<a-scene mindar-image="imageTargetSrc: assets/diogene.mind; uiLoading:no; filterMinCF:0.00001" device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false">
-      		<a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      		<a-entity mindar-image-target="targetIndex: 0">
-        		<a-gltf-model rotation="270 180 0 " position="0 0 0.1" scale="1 1 1" src="#diogene" animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"/>
-      		</a-entity>
-		<a-assets>
-  		<a-asset-item
-                    id="diogene"
-                    src="assets/asset.glb"
-  		></a-asset-item>
-      	</a-assets>
-		<button id="exit-button" onclick="location.reload()"><i class="fa-regular fa-skull"></i></button>
-    	</a-scene>
+    <a-scene mindar-image="imageTargetSrc: assets/diogene.mind; uiLoading:no; filterMinCF:0.00001"
+             device-orientation-permission-ui="enabled: false"
+             vr-mode-ui="enabled: false">
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model rotation="270 180 0 " position="0 0 0.1" scale="1 1 1" src="#diogene"
+                      animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"/>
+      </a-entity>
+      <a-assets>
+        <a-asset-item id="diogene" src="assets/asset.glb"></a-asset-item>
+      </a-assets>
+      <button id="exit-button" onclick="location.reload()">
+        <i class="fa-regular fa-skull"></i>
+      </button>
+    </a-scene>
   </body>
 </html>

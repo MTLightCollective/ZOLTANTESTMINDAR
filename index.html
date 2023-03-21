@@ -11,6 +11,22 @@
     <a-assets>
       <a-asset-item id="diogene" src="assets/asset.glb"></a-asset-item>
     </a-assets>
+    
+      <!-- add capture button -->
+  <xrextras-capture-button capture-mode="photo"></xrextras-capture-button>
+  
+  <!-- configure capture settings -->
+  <xrextras-capture-config
+    watermark-image-url="./assets/8logo.png"
+    watermark-max-width="100"
+    watermark-max-height="10"
+    file-name-prefix="ufo-image-"
+    request-mic="manual"
+  ></xrextras-capture-config>
+  
+  <!-- add capture preview -->
+  <xrextras-capture-preview></xrextras-capture-preview>
+    
     <a-scene mindar-image="imageTargetSrc: assets/atypique.mind; uiLoading:no; filterMinCF:0.00001"
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">

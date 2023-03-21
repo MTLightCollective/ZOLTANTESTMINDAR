@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
+    <a-assets>
+      <a-asset-item id="diogene" src="assets/asset.glb"></a-asset-item>
+    </a-assets>
     <a-scene mindar-image="imageTargetSrc: assets/atypique.mind; uiLoading:no; filterMinCF:0.00001"
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
@@ -16,9 +19,6 @@
         <a-gltf-model rotation="270 180 0 " position="0 0 0.1" scale="1 1 1" src="#diogene"
                       animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"/>
       </a-entity>
-      <a-assets>
-        <a-asset-item id="diogene" src="assets/asset.glb"></a-asset-item>
-      </a-assets>
     </a-scene>
   </body>
 </html>

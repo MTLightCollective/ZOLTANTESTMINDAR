@@ -14,6 +14,7 @@
              embedded>
         <a-assets>
             <a-asset-item id="crane" src="assets/crane8.glb"></a-asset-item>
+            <audio id="laugh" src="assets/laugh.mp3"></audio>
         </a-assets>
         <a-marker id="cranemarker"
                   type="pattern"
@@ -31,6 +32,7 @@
                       ></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
+        <a-sound src="#laugh" autoplay="true"></a-sound>
     </a-scene>
 </body>
 </html>
